@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 import random
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Store the current 4-digit code (initially random)
 current_code = str(random.randint(1000, 9999))
